@@ -1,0 +1,82 @@
+
+body{
+   
+    background-image:url(assets/sil.jpg);
+    font-family: Montserrat,Bold;
+   
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Montserrat,Bold;
+    text-align: center;
+  }
+
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    padding: 50px 50px;
+    text-decoration: none;
+    font-size: 26px;
+    position: relative;
+  }
+
+  #navpos{
+    display: inline-block;
+    
+  }
+
+a.item:before,
+a.item:after {
+    position: absolute;
+    transition: all 0.3s;
+  }
+
+  a.item:before {
+    content: '(';
+    left: 0px;
+    transform: translateX(2px);
+    opacity: 0;
+  }
+
+  a.item:after {
+    content: ')';
+    right: 0px;
+    transform: translateX(-5px);
+    opacity: 0;
+  }
+
+  a.item:hover:before,
+  a.item:hover:after {
+    opacity: 1;
+    transform: translateX(0px);
+   }
+
+   #logo
+   {
+       font-size: 30px;
+       text-align: center;
+       padding-top: 30px;
+   }
+
+   /**/
+   .carousel-inner img {
+    width: 400px;
+    height: 200px;
+    
+}
+.carousel-inner{
+  padding-left: 8%;
+}
+
+.carousel-control-prev-icon:hover{
+ 
+  background-color: black;
+}
+.carousel-control-next-icon:hover {
+ 
+  background-color: black;
+}
+
+
