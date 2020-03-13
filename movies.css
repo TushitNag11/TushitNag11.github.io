@@ -1,6 +1,7 @@
 body {
   font-family: Montserrat, Bold;
   text-align: center;
+  
 }
 .topnav {
   overflow: hidden;
@@ -62,10 +63,13 @@ a.item:hover:after {
   font-size: 100px;
 }
 
+
 .row
 {
   padding-bottom: 50px;
+
 }
+
 
 .hoverable:hover{
 
