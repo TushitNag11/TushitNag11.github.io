@@ -23,31 +23,7 @@ body {
   display: inline-block;
 }
 
-a.item:before,
-a.item:after {
-  position: absolute;
-  transition: all 0.3s;
-}
 
-a.item:before {
-  content: "(";
-  left: 0px;
-  transform: translateX(2px);
-  opacity: 0;
-}
-
-a.item:after {
-  content: ")";
-  right: 0px;
-  transform: translateX(-5px);
-  opacity: 0;
-}
-
-a.item:hover:before,
-a.item:hover:after {
-  opacity: 1;
-  transform: translateX(0px);
-}
 
 #logo {
   font-size: 30px;
@@ -70,7 +46,9 @@ a.item:hover:after {
 
 }
 
-
+.hoverable{
+  border: solid black;
+}
 .hoverable:hover{
 
   box-shadow: 30px 30px 30px rgb(0, 0, 0);
