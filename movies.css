@@ -1,6 +1,7 @@
 body {
   font-family: Montserrat, Bold;
   text-align: center;
+  background-image: radial-gradient(circle, #f2f7f9, #b0ddf9, #70c0fd, #30a0ff, #057bfb);
   
 }
 .topnav {
@@ -19,6 +20,13 @@ body {
   font-family: Montserrat, Bold;
 }
 
+.topnav a:hover{
+
+  transform: translate3d(0,-10px,0);
+  text-shadow: 1px 0 rgb(255, 255, 255);
+  
+}
+
 #navpos {
   display: inline-block;
 }
@@ -31,9 +39,9 @@ body {
   padding-top: 30px;
 }
 
-#logo:hover {
-  box-shadow: 0 0 100px rgb(255, 255, 255);
-}
+/* #logo:hover {
+  transform: translate3d(0,-10px,0);
+} */
 
 .movi h2 {
   font-size: 100px;
@@ -48,8 +56,12 @@ body {
 
 .hoverable{
   border: solid black;
+  background-color: #fff;
 }
 .hoverable:hover{
 
   box-shadow: 30px 30px 30px rgb(0, 0, 0);
+  transform: translate3d(0,-2px,0);
+
 }
+ 

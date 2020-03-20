@@ -22,7 +22,12 @@ body {
     position: relative;
     font-family: Montserrat,Bold;
   }
+  .topnav a:hover{
 
+    transform: translate3d(0,-10px,0);
+    text-shadow: 1px 0 rgb(255, 255, 255);
+    
+  }
   #navpos{
     display: inline-block;
     
@@ -34,7 +39,4 @@ body {
   padding-top: 30px;
 }
 
-#logo:hover {
-  box-shadow: 0 0 100px rgb(255, 255, 255);
-}
    
