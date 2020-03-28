@@ -2,10 +2,10 @@ function getMovie(movieID)
 {
     var ajaxRequest = new XMLHttpRequest();
 
-    var key = '1c427ac2';
+    var key = movieID;
 
-    //prepare the request 
-    ajaxRequest.open("GET", "http://www.omdbapi.com/?apikey=1c427ac2&i="+movieID, true);
+    //prepare the request ss
+    ajaxRequest.open("GET", "http://www.omdbapi.com/?apikey=1c427ac2&i="+key, true);
 
     //send request to api
 

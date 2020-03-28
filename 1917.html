@@ -32,9 +32,10 @@
                 &nbsp; &nbsp;
             </div>
 
-            <div class="col-sm-6" class="description">
+            <div class="col-sm-4" id="description">
                 <h2 id="title"></h2>
                 <p id="language"></p>
+                <p id="runtime"></p>
                 <p id="rated"></p>
                 <p id="genre"></p>
                 <h3>Summary</h3>
@@ -44,8 +45,44 @@
                 <h3>Crew</h3>
                 <p id="crew"></p>
             </div>
-            <div class="col-sm-2">
-                <button id="book">Book Now</button>
+            <div class="col-sm-4" id="booknow">
+                <form action="/Seat.html">
+                    <div class="form-group">
+                        <h2 id="title">Book Now</h2>
+                        <label for="Theatre">Please select the Theatre:</label>
+                        <select id="theatres" name="theatres">
+                            <option value="LandmarkCinemas">Landmark Cinemas</option>
+                            <option value="CineplexMetrotown">Cineplex Metrotown</option>
+                        </select>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label for="date">Please select the date:</label>
+                        <input type="date" class="form-control" id="date">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="Time">Please select the Time: </label>
+                        <select id="time" name="time">
+                            <option value="5:00PM">5:00PM</option>
+                            <option value="8:00PM">8:00pm</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="seats">Please select number of seats: </label>
+                        <select id="seat" name="seat">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <br>
+
+                    <button type="submit" id="booknow" class="btn btn-primary">Book Now</button>
             </div>
 
         </div>
@@ -65,8 +102,30 @@
         ajaxRequest.send();
         //assess whether the response is ready
         ajaxRequest.onreadystatechange = function () {
-            document.getElementById("book").onclick = function () {
-                location.href = "Seat.html";
+            document.getElementById("booknow").onclick = function () {
+
+
+                var theatre =  $("#theatres option:selected").text();
+                var date = document.getElementById("date").value;
+                var time =  $("#time option:selected").text();
+                var seats =  $("#seat option:selected").text();
+
+                // Check browser support
+                if (typeof (Storage) !== "undefined") {
+                    // Store
+                    localStorage.setItem("Theatre",theatre);
+                    localStorage.setItem("Date",date);
+                    localStorage.setItem("Time",time);
+                    localStorage.setItem("Seats",seats);
+
+                    // Retrieve
+                  
+                } else {
+                    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+                }
+
+
+
             };
 
             if ((ajaxRequest.status == 200) && (ajaxRequest.readyState == 4)) {
@@ -79,11 +138,12 @@
                 document.getElementById("poster").src = arrJSON["Poster"];
                 document.getElementById("title").innerHTML = arrJSON["Title"];
                 document.getElementById("language").innerHTML = "Language : " + arrJSON["Language"];
+                document.getElementById("runtime").innerHTML = "Runtime : " + arrJSON["Runtime"];
                 document.getElementById("rated").innerHTML = "Rated   : " + arrJSON["Rated"];
                 document.getElementById("genre").innerHTML = "Genre : " + arrJSON["Genre"];
                 document.getElementById("summary").innerHTML = arrJSON["Plot"];
                 document.getElementById("cast").innerHTML = arrJSON["Actors"];
-                document.getElementById("crew").innerHTML = arrJSON["Writer"];
+                document.getElementById("crew").innerHTML = arrJSON["Director"];
 
 
             }
