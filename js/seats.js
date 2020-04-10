@@ -8,7 +8,8 @@ $(document).ready(function(){
     var seatSelected = $('.seat.active').length;
 
       sessionStorage.setItem("seat Num",seatNo);
-  
+    var price = numOfSeats * 10;
+      sessionStorage.setItem("price",price);
 
   });
 $('.cinema-seats .seat').on('click', function() {
