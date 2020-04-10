@@ -1,22 +1,20 @@
 $(document).ready(function(){
 
+  var seatNo="";
 
   $("#continue").on('click',function(){
 
     var numOfSeats = localStorage.getItem("Seats");
     var seatSelected = $('.seat.active').length;
-    var seatNo="";
-    if(numOfSeats!=seatSelected)
-    {
-      alert("Please select "+numOfSeats+" seats");
-    }
-    
+
+      sessionStorage.setItem("seat Num",seatNo);
+  
 
   });
 $('.cinema-seats .seat').on('click', function() {
     $(this).toggleClass('active');
-    seatNo = ""+$(this).attr('index');
-    localStorage.setItem("seat Num",seatNo);
+    seatNo += ""+$(this).attr('index')+" ";
+    
   });
 
   

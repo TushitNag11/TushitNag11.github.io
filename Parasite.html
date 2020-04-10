@@ -104,6 +104,7 @@
             document.getElementById("booknow").onclick = function () {
 
 
+                var movieName = arrJSON["Title"];
                 var theatre =  $("#theatres option:selected").text();
                 var date = document.getElementById("date").value;
                 var time =  $("#time option:selected").text();
@@ -112,16 +113,17 @@
                 // Check browser support
                 if (typeof (Storage) !== "undefined") {
                     // Store
-                    localStorage.setItem("Theatre",theatre);
-                    localStorage.setItem("Date",date);
-                    localStorage.setItem("Time",time);
-                    localStorage.setItem("Seats",seats);
-
+                    sessionStorage.setItem("Movie",movieName);
+                    sessionStorage.setItem("Theatre",theatre);
+                    sessionStorage.setItem("Date",date);
+                    sessionStorage.setItem("Time",time);
+                    sessionStorage.setItem("Seats",seats);
                     // Retrieve
                   
                 } else {
                     document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
                 }
+
 
 
 
